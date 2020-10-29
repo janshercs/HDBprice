@@ -43,9 +43,9 @@ class flat_attributes(forms.Form):
                     ('5 ROOM', '5 ROOM'),
                     ('EXECUTIVE', 'EXECUTIVE'),
                     ('MULTI GENERATION', 'MULTI GENERATION')]
-    storey_ranges =[("1-5",1),
-                    ("6-10",2),
-                    ("11-15",3)]
+    storey_ranges =[(1,"1-5"),
+                    (2,"6-10"),
+                    (3,"11-15")]
     towns = [('ANG MO KIO', 'ANG MO KIO'),
             ('BEDOK', 'BEDOK'),
             ('BISHAN', 'BISHAN'),
@@ -75,6 +75,7 @@ class flat_attributes(forms.Form):
             ('PUNGGOL', 'PUNGGOL')]
     flat_model = forms.CharField(label = 'Flat Model', widget = forms.Select(choices = flat_models))
     flat_type = forms.CharField(label = 'Flat Type', widget = forms.Select(choices = flat_types))
+    floor_area_sqm = forms.FloatField(label = 'Floor area in sqm')
     lease_commence_date = forms.IntegerField(label = 'Year lease commenced')
     remaining_lease = forms.IntegerField(label = 'Years of lease remaining')
     storey_range = forms.IntegerField(label = 'Storey range', widget = forms.Select(choices = storey_ranges))

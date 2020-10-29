@@ -4,11 +4,12 @@
     <title>How much is my HDB?</title>
 </head>
 <body>
-<span>Place holder for now</span>
-<form name = "user_data">
+<span>{{example}}</span>
+<form name = "hdb_data" method = "POST">
     {% csrf_token %} 
     {{ form }}
     <input type="submit" value="OK">
+
 </form>
 </body>
 </html>
