@@ -80,4 +80,4 @@ class flat_attributes(forms.Form):
     remaining_lease = forms.IntegerField(label = 'Years of lease remaining')
     storey_range = forms.IntegerField(label = 'Storey range', widget = forms.Select(choices = storey_ranges))
     town = forms.CharField(label = 'Town', widget = forms.Select(choices = towns))
-    postal_code = forms.IntegerField(label = 'Postal Code')
+    postalcode = forms.IntegerField(label = 'Postal Code')
