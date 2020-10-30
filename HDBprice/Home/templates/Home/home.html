@@ -2,14 +2,16 @@
 <html lang = "en">
 <head>
     <title>How much is my HDB?</title>
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'Home/style.css' %}">
 </head>
 <body>
-<span>{{example}}</span>
-<form name = "hdb_data" method = "POST">
-    {% csrf_token %} 
-    {{ form }}
-    <input type="submit" value="OK">
-
-</form>
+    <!-- <div class = 'overlay'></div> -->
+    <div class = 'results'>Estimated price: {{example}}</div>
+    <form name = "hdb_data" method = "POST" class = 'input_form'>
+        {% csrf_token %} 
+        {{ form.as_p }}
+        <input type="submit" value="OK">
+    </form>
 </body>
 </html>

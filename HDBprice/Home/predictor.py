@@ -10,15 +10,15 @@ def unpickleRick(file_name):
     infile.close()
     return file
 
-pipe = unpickleRick('Home/pipe1.pickle')
-b = 1234
+pipe = unpickleRick('Home/pipe2.pickle')
 def show_data(post_data):
     data = pd.DataFrame(dict(post_data))
     data = data.drop(['csrfmiddlewaretoken'],axis = 'columns',)
-    a = datetime.date.today() - datetime.date(1990,1,1)
-    data['tx_day'] = a.days
+    days_since_1990 = datetime.date.today() - datetime.date(1990,1,1)
+    data['tx_day'] = days_since_1990.days
     result = pipe.predict(data)
-    return result
+    price = round(result[0],-3)
+    return '${:06.0f}'.format(price)
     # except:
     #     return "Error, something went"
 

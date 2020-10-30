@@ -1,0 +1,28 @@
+html{
+    min-height:100%
+}
+body{
+    background-image: url(https://dollarsandsense.sg/wp-content/uploads/2017/04/HDB-Flats.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+.overlay{
+    position: absolute;
+    min-height: 100%;
+    min-width: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(244, 244, 244, .3);
+   }
+.input_form{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    background: rgba(244, 244, 244, .5);
+}
+.results{
+    background: rgba(244, 244, 244, .5);
+    font-size: 4em;
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}

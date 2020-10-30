@@ -12,6 +12,9 @@ class homepage(TemplateView):
 
     def post(self,request):
         form = flat_attributes(request.POST)
-        example = show_data(request.POST)
-        return render(request,'Home/home.html',{'form':form, 'example':example})
+        if form.is_valid():
+            example = show_data(request.POST)
+            return render(request,'Home/home.html',{'form':form, 'example':example})
+        else:
+            return render(request, 'Home/home.html', {'form':form})
 
