@@ -1,1 +1,1 @@
-web: gunicorn HDBprice.HDBprice.wsgi --log-file -
+web: gunicorn HDBprice.wsgi --log-file -
