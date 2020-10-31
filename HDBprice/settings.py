@@ -29,7 +29,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY','g1oliif8u2_huas3e#oqkxrzx%^h&fq
 # DEBUG = True
 
 DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['polar-stream-60254.herokuapp.com', '127.0.0.1']
 
 
 # Application definition
