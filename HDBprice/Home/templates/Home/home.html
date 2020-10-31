@@ -8,10 +8,28 @@
 <body>
     <!-- <div class = 'overlay'></div> -->
     <div class = 'results'>Estimated price: {{example}}</div>
-    <form name = "hdb_data" method = "POST" class = 'input_form'>
-        {% csrf_token %} 
-        {{ form.as_p }}
-        <input type="submit" value="OK">
-    </form>
+    <br>
+    <table class = 'input_form'>
+        <form name = "hdb_data" method = "POST">
+            {% csrf_token %} 
+            {% for field in form %}
+            <tr>
+                <td>{{field.label}}</td>
+                <td>{{field}}</td>
+                {% if field.errors %}
+                {% for error in field.errors %}
+                <td class = 'errorlist'>{{ error }}</td>
+                {% endfor %}
+                {% endif %}
+            </tr>
+            {% endfor %}
+            <tr>
+                <td>
+                    <input type="submit" value="OK" id = "submit-button">
+                </td>
+            </tr>
+        </form>
+    </table>
+    
 </body>
 </html>

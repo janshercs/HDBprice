@@ -16,13 +16,33 @@ body{
     background: rgba(244, 244, 244, .3);
    }
 .input_form{
-    font-family: 'Courier New', Courier, monospace;
-    font-weight: bold;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: rgba(244, 244, 244, .5);
+    padding:10px;
+    border-spacing: 10px 10px;
+
 }
 .results{
     background: rgba(244, 244, 244, .5);
     font-size: 4em;
     font-family: 'Courier New', Courier, monospace;
     font-weight: bold;
+}
+
+input, select{
+    padding:5px;
+    border-radius:10px;
+    box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+    border:0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#submit-button{
+    background-color: palegreen;
+    padding: 5px 20px;
+    font-size: 1.5em;
+}
+
+.errorlist{
+    color:#a50218;
 }
