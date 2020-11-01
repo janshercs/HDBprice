@@ -21,7 +21,7 @@ def show_data(post_data):
     data['remaining_lease'] = (lease_expiry_date - today).days//365
     result = pipe.predict(data)
     price = round(result[0],-3)
-    # return data
+    # print(data.dtypes)
     return '${:06.0f}'.format(price)
     # except:
     #     return "Error, something went"
