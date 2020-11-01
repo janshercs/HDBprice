@@ -3,26 +3,26 @@ from django.core.exceptions import ValidationError
 from django.core import validators
 
 class flat_attributes(forms.Form):
-    flat_models = [('New Generation', 'New Generation'),
-                ('Improved', 'Improved'),
-                ('Model A', 'Model A'),
-                ('Standard', 'Standard'),
-                ('Simplified', 'Simplified'),
-                ('Model A-Maisonette', 'Model A-Maisonette'),
-                ('Apartment', 'Apartment'),
-                ('Maisonette', 'Maisonette'),
-                ('Terrace', 'Terrace'),
-                ('2-room', '2-room'),
-                ('Improved-Maisonette', 'Improved-Maisonette'),
-                ('Multi Generation', 'Multi Generation'),
-                ('Premium Apartment', 'Premium Apartment'),
-                ('Adjoined flat', 'Adjoined flat'),
-                ('Premium Maisonette', 'Premium Maisonette'),
-                ('Model A2', 'Model A2'),
-                ('Type S1', 'Type S1'),
-                ('Type S2', 'Type S2'),
-                ('Premium Apartment Loft', 'Premium Apartment Loft'),
-                ('DBSS', 'DBSS')]
+    # flat_models = [('New Generation', 'New Generation'),
+    #             ('Improved', 'Improved'),
+    #             ('Model A', 'Model A'),
+    #             ('Standard', 'Standard'),
+    #             ('Simplified', 'Simplified'),
+    #             ('Model A-Maisonette', 'Model A-Maisonette'),
+    #             ('Apartment', 'Apartment'),
+    #             ('Maisonette', 'Maisonette'),
+    #             ('Terrace', 'Terrace'),
+    #             ('2-room', '2-room'),
+    #             ('Improved-Maisonette', 'Improved-Maisonette'),
+    #             ('Multi Generation', 'Multi Generation'),
+    #             ('Premium Apartment', 'Premium Apartment'),
+    #             ('Adjoined flat', 'Adjoined flat'),
+    #             ('Premium Maisonette', 'Premium Maisonette'),
+    #             ('Model A2', 'Model A2'),
+    #             ('Type S1', 'Type S1'),
+    #             ('Type S2', 'Type S2'),
+    #             ('Premium Apartment Loft', 'Premium Apartment Loft'),
+    #             ('DBSS', 'DBSS')]
     flat_types = [('1 ROOM', '1 ROOM'),
                     ('2 ROOM', '2 ROOM'),
                     ('3 ROOM', '3 ROOM'),
@@ -69,11 +69,11 @@ class flat_attributes(forms.Form):
             ('PASIR RIS', 'PASIR RIS'),
             ('SEMBAWANG', 'SEMBAWANG'),
             ('PUNGGOL', 'PUNGGOL')]
-    flat_model = forms.CharField(label = 'Flat Model', widget = forms.Select(choices = flat_models))
+    # flat_model = forms.CharField(label = 'Flat Model', widget = forms.Select(choices = flat_models), initial = 'Model A' )
     flat_type = forms.CharField(label = 'Flat Type', widget = forms.Select(choices = flat_types))
     floor_area_sqm = forms.FloatField(label = 'Floor area in sqm')
     lease_commence_date = forms.IntegerField(label = 'Year lease commenced')
-    remaining_lease = forms.IntegerField(label = 'Years of lease remaining')
+    # remaining_lease = forms.IntegerField(label = 'Years of lease remaining')
     storey_range = forms.IntegerField(label = 'Storey range', widget = forms.Select(choices = storey_ranges))
     town = forms.CharField(label = 'Town', widget = forms.Select(choices = towns))
     postalcode = forms.IntegerField(label = 'Postal Code')
@@ -96,7 +96,7 @@ class flat_attributes(forms.Form):
             raise ValidationError('Postal codes should be 6 digits.')
         return data
 
-    def clean_remaining_lease(self):
-        data = self.cleaned_data['remaining_lease']
-        if data > 99 or data < 0:
-            raise ValidationError('Remaining lease should be less than 99 and more than 0.')
+    # def clean_remaining_lease(self):
+    #     data = self.cleaned_data['remaining_lease']
+    #     if data > 99 or data < 0:
+    #         raise ValidationError('Remaining lease should be less than 99 and more than 0.')
